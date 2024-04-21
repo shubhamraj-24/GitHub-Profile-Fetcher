@@ -1,0 +1,30 @@
+<!-- user-profile.component.html -->
+
+<ng-container *ngIf="!user">
+  <!-- Show skeleton loader while user profile is loading -->
+  <app-skeleton-loader></app-skeleton-loader>
+</ng-container>
+
+<div class="profile bg-blue-50 shadow-lg rounded-lg p-6" *ngIf="user">
+  <img [src]="user.avatar_url" alt="Profile Image" class="rounded-full w-24 h-24 mx-auto">
+  <h2 class="text-2xl font-semibold mt-4 mb-2 text-center">
+    <i class="fas fa-user-circle"></i> {{ user.name }}
+  </h2>
+  <p class="text-gray-600 text-center"   *ngIf="user.bio">
+    <i class="fas fa-info-circle"></i> {{ user.bio }}
+  </p>
+  <p class="flex items-center justify-center text-gray-600" *ngIf="user.location">
+    <i class="fas fa-map-marker-alt"></i> {{ user.location }}
+  </p>
+  <div class="flex justify-center mt-4">
+    <a [href]="user.html_url" target="_blank" class="text-blue-500 hover:text-blue-600">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+
+    <ng-container *ngIf="user.twitter_username">
+      <a [href]="'https://twitter.com/' + user.twitter_username" target="_blank" class="text-blue-500 hover:text-blue-600 ml-4">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    </ng-container>
+  </div>
+</div>

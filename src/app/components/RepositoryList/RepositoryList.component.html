@@ -1,0 +1,40 @@
+<!-- RepositoryList.component.html -->
+
+<div *ngIf="loading; else content" class="mt-6">
+  <!-- Show skeleton loader when loading is true -->
+  <app-skeleton-loader></app-skeleton-loader>
+</div>
+
+<ng-template #content>
+  <ng-container *ngIf="publicRepos === 0; else repoList">
+    <!-- Display message if user has no public repositories -->
+    <div class="mt-6 flex items-center py-3">
+      <p class="text-gray-600">User has no public repositories.</p>
+    </div>
+  </ng-container>
+
+  <ng-template #repoList>
+
+
+    <div class="mt-6 flex items-center py-3">
+ 
+      <label for="pageSize" class="block text-sm font-medium text-gray-700 mr-2">Page Size:</label>
+      <select id="pageSize" (change)="onPageSizeChange($event)" class="block pl-3 pr-2  text-base border-gray-300 bg-blue-100 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <option *ngFor="let option of pageSizeOptions" [value]="option" [selected]="option === pageSize">{{ option }}</option>
+      </select>
+    </div> 
+
+
+    <div *ngIf="repositories" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div *ngFor="let repo of repositories" class="repo-card bg-blue-100 shadow-lg rounded-lg p-4">
+        <h3 class="text-xl font-semibold mb-2">{{ repo.name }}</h3>
+        <p class="text-gray-600">{{ repo.description }}</p>
+        <ul class="flex flex-wrap">
+          <li *ngFor="let tag of repo.topics" class="bg-white text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{{ tag }}</li>
+        </ul>
+      </div>
+    </div>
+    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+  </ng-template>
+</ng-template>
+

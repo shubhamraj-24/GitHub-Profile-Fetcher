@@ -1,0 +1,20 @@
+<!-- pagination.component.html -->
+<!-- <div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">« Older</button>
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Newer »</button>
+  </div>
+   -->
+
+   <!-- pagination.component.html -->
+
+<!-- <div>
+  <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  <span>{{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+</div> -->
+<div class="flex justify-between items-center mt-6 bg-blue-200">
+  <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" class="bg-teal-500 text-gray-900 font-semibold py-2 px-4 rounded-l hover:bg-teal-500 disabled:bg-opacity-50 disabled:cursor-not-allowed">Previous</button>
+  <span class="text-sm font-semibold">{{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages" class="bg-teal-500 text-gray-900 font-semibold py-2 px-4 rounded-r hover:bg-teal-500 disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+</div>

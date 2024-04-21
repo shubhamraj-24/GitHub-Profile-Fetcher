@@ -1,0 +1,14 @@
+<div class="container mx-auto px-5 py-4">
+    <app-search (search)="onSearch($event)"></app-search>
+
+    <!-- Show empty state if user data is not available -->
+    <div *ngIf="!user || !user.login" class="text-center text-red-500 text-lg mt-4">
+      <p class="font-bold">User not found</p>
+    </div>
+
+    <!-- Display user profile if user data is available -->
+    <app-user-profile *ngIf="user && user.login" [user]="user"></app-user-profile>
+
+    <!-- Display repository list if user data is available -->
+    <app-repository-list *ngIf="user && user.login" [username]="user.login" [publicRepos]="user.public_repos"></app-repository-list>
+</div>
