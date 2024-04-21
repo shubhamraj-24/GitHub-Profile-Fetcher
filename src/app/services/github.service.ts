@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 import { Repository } from '../models/repository.model';
 import { CacheService } from './cache.service';
 import { EMPTY ,throwError} from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+//import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class GithubService {
   public apiUrl = 'https://api.github.com';
 
   //Add github access token if the rate limit exceeds.
-  private accessToken =  environment.API_ACCESS_TOKEN || '';
+  private accessToken =  '';
 
   constructor(private http: HttpClient, private cacheService: CacheService) {}
 
