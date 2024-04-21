@@ -17,7 +17,8 @@ export class GithubService {
   public apiUrl = 'https://api.github.com';
 
   //Add github access token if the rate limit exceeds.
-  private accessToken =  '';
+  //private accessToken = environment.API_ACCESS_TOKEN || '';
+  private accessToken = '';
 
   constructor(private http: HttpClient, private cacheService: CacheService) {}
 
