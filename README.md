@@ -15,6 +15,11 @@ This project is a web application developed using Angular that allows users to s
 
 Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+## Testing server
+
+Run `ng test` for a test server. Navigate to http://localhost:9876/?id=32873612 in Google Chrome. The app will automatically reload if you change any of the source files.
+
+
 ## Further help
 
 Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
