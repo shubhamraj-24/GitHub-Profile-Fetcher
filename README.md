@@ -1,4 +1,4 @@
-# Fyle Frontend Challenge
+# GitHub Profile Fetcher : Fyle Frontend Challenge
 
 ## Who is this for?
 
