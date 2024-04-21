@@ -21,7 +21,7 @@ Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app wil
 
 ## Testing server
 
-Run `ng test` for a test server. Navigate to http://localhost:9876/?id=32873612 in Google Chrome. The app will automatically reload if you change any of the source files.
+Run `ng test` for a test server. Navigate to http://localhost:9876/ in Google Chrome. The app will automatically reload if you change any of the source files.
 
 
 ## Further help
