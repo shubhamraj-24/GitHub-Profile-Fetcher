@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fyle-frontend-challenge": {
+    "GitHub-Profile-Fetcher": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fyle-frontend-challenge",
+            "outputPath": "dist/GitHub-Profile-Fetcher",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fyle-frontend-challenge:build:production"
+              "browserTarget": "GitHub-Profile-Fetcher:build:production"
             },
             "development": {
-              "browserTarget": "fyle-frontend-challenge:build:development"
+              "browserTarget": "GitHub-Profile-Fetcher:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fyle-frontend-challenge:build"
+            "browserTarget": "GitHub-Profile-Fetcher:build"
           }
         },
         "test": {

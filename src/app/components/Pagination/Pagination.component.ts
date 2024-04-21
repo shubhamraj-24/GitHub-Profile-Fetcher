@@ -1,6 +1,6 @@
 // pagination.component.ts
 
-import { Component, OnInit, Input, Output, EventEmitter ,ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
