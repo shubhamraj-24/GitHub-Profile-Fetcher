@@ -13,13 +13,14 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements  OnDestroy {
   currentPage = 1;
   totalPages = 1;
-  loading = false;
+  loading = false; // Flag indicating loading state
   user: User | null = null;
   repositories: Repository[] = [];
-  username = '';
+  username = ''; // Username input by the user
   public_repos: number = 0;
-  userDataSubscription: Subscription | undefined;
-  repositoryDataSubscription: Subscription | undefined;
+  userDataSubscription: Subscription | undefined; // Subscription for user data retrieval
+  repositoryDataSubscription: Subscription | undefined; // Subscription for repository data retrieval
+
 
   constructor(private githubService: GithubService) {}
 
@@ -28,6 +29,8 @@ export class AppComponent implements  OnDestroy {
     this.loadUserData('shubhamraj-24');
   }
 
+
+  // Method to load user data from GitHub API
   loadUserData(username: string): void {
     this.loading = true;
     // Fetch user profile data
@@ -47,6 +50,8 @@ export class AppComponent implements  OnDestroy {
     });
   }
 
+
+  // Method to load repositories for a user from GitHub API
   loadRepositories(username: string, page: number): void {
     this.repositoryDataSubscription = this.githubService.getRepositories(username, page, 10).subscribe({
       next: repos => {
@@ -64,17 +69,23 @@ export class AppComponent implements  OnDestroy {
     });
   }
 
+
+  // Method triggered when user performs a search
   onSearch(username: string): void {
     this.username = username;
     this.loadUserData(username);
   }
 
+
+  // Method triggered when user changes the page
   onPageChange(page: number): void {
     this.currentPage = page;
     // Fetch repositories for the selected page
     this.loadRepositories(this.username, page);
   }
 
+
+  // Lifecycle hook called when the component is destroyed
   ngOnDestroy(): void {
     // Unsubscribe from subscriptions to prevent memory leaks
     this.userDataSubscription?.unsubscribe();

@@ -63,7 +63,7 @@ export class RepositoryListComponent implements OnInit, OnChanges {
     this.pageSize = parseInt(target.value, 10);
     this.currentPage = 1; // Reset current page when page size changes
     const selectedPageSize = parseInt(target.value, 10);
-    this.totalPages = Math.ceil(this.publicRepos / selectedPageSize);
+    this.totalPages = Math.ceil(this.publicRepos / selectedPageSize); // Changes toalPages as PageSize changes 
     console.log('Selected page size:', selectedPageSize);
    
     if (this.username) {
