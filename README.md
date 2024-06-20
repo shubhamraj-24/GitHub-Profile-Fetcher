@@ -1,4 +1,4 @@
-# GitHub Profile Fetcher : Fyle Frontend Challenge
+# GitHub Profile Fetcher
 
 This project is a web application developed using Angular that allows users to search for GitHub users and view their repositories. It provides a clean and intuitive interface for users to explore GitHub profiles and repositories efficiently.
 
